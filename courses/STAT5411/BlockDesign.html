@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>Block Design</title>
+<head>
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+</head>
+<body>
+
+<h1>Blocked designs</h1>
+<p><a href="Factorial.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="ANCOVA.html">Next</a></p>
+
+<h2>Randomized complete block design with one factor</h2>
+
+<p>Let's use the data set of Example 15.1 from the textbook. 
+
+<figure>
+  <img src="block1.png", width = "550">
+</figure> 
+
+<p>We will still use <code>glm</code> procedure to analyze the data.</p>
+
+<pre>
+    filename myfile url 'http://www.d.umn.edu/~yangli/5411/data/insecticides.txt';
+
+    data insecticides;
+        infile myfile firstobs = 2;
+        input yield insecticide block;
+    run;
+
+    proc glm data = insecticides;
+        class block insecticide;
+        model yield = insecticide block;
+    run;
+</pre>
+
+<p>Here the model is written as <code>yield = insecticide block</code> because there is no interaction between <code>insecticide</code> and <code>block</code>. The output is</p>
+
+<figure>
+  <img src="block2.png", width = "450">
+</figure> 
+
+<p>The test for three insecticides \(H_0: \tau_1=\tau_2=\tau_3\) gives a \(p\)-value of 0.0001. The conclusion is that there is strong difference among three types of insecticides.</p>
+
+<h2>Latin square design</h2>
+
+<p>Let's use Example 15.5 from the textbook which is also covered in the lecture.</p>
+
+<figure>
+  <img src="block3.png", width = "550">
+</figure> 
+
+<p>The model is \(y_{ijk}=\mu+\tau_k+\beta_i+\gamma_j+\epsilon_{ijk}\) where \(\tau_k\) is the treatment effect; \(\beta_i\) is the row effect; \(\gamma_j\) is the column effect.</p>
+
+<pre>
+    data latinsquare;
+        input y month $ house $ trt $;
+        datalines;
+    162 m1 h1 b1
+     89 m1 h2 b2
+    160 m1 h3 b3
+    146 m1 h4 b4
+    241 m1 h5 b5
+    115 m2 h1 b2
+    192 m2 h2 b3
+    164 m2 h3 b4
+    296 m2 h4 b5
+    142 m2 h5 b1
+    149 m3 h1 b3
+    273 m3 h2 b4
+    238 m3 h3 b5
+    227 m3 h4 b1
+    103 m3 h5 b2
+    229 m4 h1 b4
+    273 m4 h2 b5
+    175 m4 h3 b1
+     71 m4 h4 b2
+    119 m4 h5 b3
+    328 m5 h1 b5
+    205 m5 h2 b1
+    321 m5 h3 b2
+    208 m5 h4 b3
+    333 m5 h5 b4
+    ;
+    run;
+    
+    proc glm data=latinsquare plots(unpack)=diagnostics;
+        class month house trt;
+        model y = month house trt;
+    run;
+</pre>
+
+<p>Here using <code>plots(unpack)=diagnostics</code> will generate several diagnostics plots including residual plot, qq plot, etc.</p>
+
+<figure>
+  <img src="block4.png", width = "450">
+</figure> 
+
+<p><a href="Factorial.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="ANCOVA.html">Next</a></p>
+
+</body>
+</html>
+

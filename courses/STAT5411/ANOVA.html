@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<title>ANOVA Table</title>
+<head>
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+</head>
+<body>
+
+<h1>ANOVA table</h1>
+<p><a href="VarianceTest.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="Contrast.html">Next</a></p>
+
+<p>Now suppose there are \(t>2\) populations (treatments). Each treatment has \(n\) observations so that the total number of observations is \(nt\). First we want to see if these \(t\) treatments have the same mean values \(\mu_1=\mu_2=\cdots = \mu_t\). Let's use the data set in Example 8.4 of the textbook.</p>
+
+<figure>
+  <img src="SASANOVA1.png" width = "600">
+</figure> 
+
+<p>To input the data set into SAS, there needs to be a categorical variable representing the treatments.</p>
+
+<pre>
+    data example84;
+        input y trt $;
+        datalines;
+        1 1km
+        5 1km
+        2 1km
+        1 1km
+        2 1km
+        2 1km
+        4 1km
+        3 1km
+        0 1km
+        2 1km
+        4 5km
+        8 5km
+        2 5km
+        3 5km
+        8 5km
+        5 5km
+        6 5km
+        4 5km
+        3 5km
+        3 5km
+        20 10km
+        26 10km
+        24 10km
+        11 10km
+        28 10km
+        20 10km
+        19 10km
+        19 10km
+        21 10km
+        24 10km
+        37 20km
+        30 20km
+        26 20km
+        24 20km
+        41 20km
+        25 20km
+        36 20km
+        31 20km
+        31 20km
+        33 20km
+        ;
+    run;
+</pre>
+
+<p>Here, since <code>trt</code> is a variable with characters (1km, 5km, 10km, 20km), we need to add <code>$</code> symbol when we read the data. <code>$</code> tells SAS to start reading a character variable for <code>trt</code>.</p>
+
+<p>The ANOVA table can be generated using <code>proc glm</code> procedure. <code>glm</code> represents generalized linear models. Here <code>class</code> indicates that <code>trt</code> is a classification variable (four levels of the factor). <code>model</code> specifies the ANOVA model \(y_{ij}=\mu+\tau_i + \epsilon_{ij}\). All terms in the model need to be explicitly specified except for the overall mean \(\mu\) and the random error \(\epsilon\) which will be added automatically by SAS. Since \(\tau_i\) is the treatment effect, we need to use <code>model y = trt</code> for the model specification.</p> 
+
+<pre>
+    proc glm data=example84;
+        class trt;
+        model y = trt;
+    run;
+</pre>
+
+<figure>
+  <img src="SASANOVA2.png" width = "400">
+</figure> 
+
+<p><a href="VarianceTest.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="Contrast.html">Next</a></p>
+
+</body>
+</html>
+
+

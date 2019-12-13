@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<title>Inference about Population Variances</title>
+<head>
+<head>
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+</head>
+</head>
+<body>
+
+<h1>Inference about population variances</h1>
+<p><a href="TwoSampleT.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="ANOVA.html">Next</a></p>
+
+<h2>Estimation and tests for a population variance</h2>
+
+<p>The population variance \(\sigma^2\) is an unknown parameter which needs to be estimated from the data. Sample variance</p>
+$$
+s^2=\dfrac{\sum_{i=1}^{n} (y_i-\bar{y})^2}{n-1}
+$$
+<p> is unbiased for \(\sigma^2\). The \(100(1-\alpha)\%\) confidence interval for \(\sigma^2\) is</p>
+$$
+\left(\dfrac{(n-1)s^2}{\chi^2_L}, \quad \dfrac{(n-1)s^2}{\chi^2_U}\right)
+$$
+<p>where \(\chi^2_U\) is the upper-tail value of chi-square for degrees of freedom \(n-1\) with area \(\alpha/2\) to its right, and \(\chi^2_L\) is the lower-tail value with area \(\alpha/2\) to its left.</p>
+
+<p>In the <code>cars.txt</code> data, we can get the \(99\%\) confidence interval for the variance of <code>wt</code>.</p>
+
+<pre>
+    filename file1 url 'http://www.d.umn.edu/~yangli/5411/data/cars.txt';
+        data cars;
+            infile file1 firstobs=2;
+            input mpg cyl hp wt;
+    run;
+
+    proc univariate data=cars cibasic(alpha=0.01);
+        var wt;
+    run;
+</pre>
+
+<figure>
+  <img src="SASCI.png", width = "330">
+</figure> 
+
+<p>The estimate of \(\sigma^2\) is 0.95738 which is the sample variance. The confidence interval is (0.53959, 2.05279).</p>
+
+<h2>Estimation and tests for comparing two population variances</h2>
+
+<p>For two populations, we typically want to test whether their population variances are the same or not. The null hypothesis is \(H_0: \sigma^2_1=\sigma^2_2\) versus \(H_a: \sigma^2_1\neq \sigma^2_2\).</p>
+
+<pre>
+    filename file2 url 'http://www.d.umn.edu/~yangli/5411/data/yield.txt';
+    data yield;
+        infile file2 firstobs=2;
+        input grp yld;
+    run;
+
+    proc ttest data=yield alpha=0.05;
+        class grp;
+        var yld;
+    run;
+</pre>
+
+<figure>
+  <img src="var1.png", width = "300">
+</figure> 
+
+<p>The F test for equal variances gives a large \(p\)-value. We can't reject \(H_0\).</p>
+
+<h2>Tests for comparing t > 2 population variances</h2>
+
+<p>If there are more than two populations, we need to use Brown-Forsythe-Levene (BFL) test for \(H_0: \sigma^2_1=\sigma^2_2=\cdots = \sigma^2_t\). Here is an example.</p>
+
+<pre>
+    data example84;
+        input y trt $;
+        datalines;
+        1 1km
+        5 1km
+        2 1km
+        1 1km
+        2 1km
+        2 1km
+        4 1km
+        3 1km
+        0 1km
+        2 1km
+        4 5km
+        8 5km
+        2 5km
+        3 5km
+        8 5km
+        5 5km
+        6 5km
+        4 5km
+        3 5km
+        3 5km
+        20 10km
+        26 10km
+        24 10km
+        11 10km
+        28 10km
+        20 10km
+        19 10km
+        19 10km
+        21 10km
+        24 10km
+        37 20km
+        30 20km
+        26 20km
+        24 20km
+        41 20km
+        25 20km
+        36 20km
+        31 20km
+        31 20km
+        33 20km
+        ;
+    run;
+
+    proc glm data=example84 plots=diagnostics;
+        class trt;
+        model y = trt;
+        means trt / hovtest=bf;
+    run;
+</pre>
+
+<figure>
+  <img src="BFL.png", width = "400">
+</figure> 
+
+<p>Since the \(p\)-value is small (0.0203), we need to reject \(H_0\) and conclude that not all population variances are the same. This can be confirmed by the boxplot below.</p>
+
+<figure>
+  <img src="BFL2.png", width = "500">
+</figure> 
+
+<p><a href="TwoSampleT.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="ANOVA.html">Next</a></p>
+
+</body>
+</html>
+
+

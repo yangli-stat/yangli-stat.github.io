@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<title>Two-sample t-test</title>
+<head>
+<head>
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+</head>
+<body>
+
+<h1>Two-sample t-test</h1>
+<p><a href="OneSampleT.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="VarianceTest.html">Next</a></p>
+
+<p>Now suppose there are two populations. Population 1 has mean \(\mu_1\) and variance \(\sigma^2_1\). Population 2 has mean \(\mu_2\) and variance \(\sigma^2_2\). These parameters are all unknown. Two random samples are drawn independently from each population. The goal is to infer about \(\mu_1-\mu_2\). Again, there are two types of inferences: estimation and hypothesis testing. </p>
+
+<p>We will be using a data set on crop yields. There are two treatments (populations). From each population, we draw a sample of size 50. The data set contains two columns: <code>grp</code> and <code>yld</code>. <code>grp</code> has two values 1 and 2, showing which population the observation comes from. <code>yld</code> is the crop yield of that unit.</p>
+
+<pre>
+    filename file2 url 'http://www.d.umn.edu/~yangli/5411/data/yield.txt';
+    data yield;
+        infile file2 firstobs=2;
+        input grp yld;
+    run;
+</pre>
+
+<figure>
+  <img src="SASyield.png", width = "170">
+</figure> 
+
+<p>You can create some summary statistics of <code>yld</code> for each <code>grp</code> using <code>by</code> statement in SAS.</p>
+
+<pre>
+    proc univariate data=yield cibasic(alpha=0.05);
+        var yld;
+        by grp;
+    run;
+</pre>
+
+<figure>
+  <img src="SASyield2.png", width = "380">
+  <img src="SASyield3.png", width = "380">
+</figure> 
+
+<h2>Estimation</h2>
+
+<h3>Point estimation</h3>
+
+<p>The point estimation of \(\mu_1-\mu_2\) is \(\widehat{\mu_1-\mu_2}=\bar{y}_1-\bar{y}_2\) where \(\bar{y}_1\) is the sample mean of the first sample and \(\bar{y}_2\) is the sample mean of the second sample.</p>
+
+<h3>Interval estimation</h3>
+
+<h4>Case where \(\sigma^2_1=\sigma^2_2\)</h4>
+
+<p>If it is reasonable to assume \(\sigma^2_1=\sigma^2_2\) (we will discuss how to test this in the next chapter), the \(100(1-\alpha)\%\) confidence interval for \(\mu_1-\mu_2\) is \((\bar{y}_1 - \bar{y}_2) \pm t_{\alpha/2, n_1-n_2-2} s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\), where \(n_1\) and \(n_2\) are two sample sizes, \(t_{\alpha/2, n_1+n_2-2}\) is the critical value of \(t\)-distribution with degrees of freedom \(n_1-n_2-2\), and \(s_p\) is the pooled standard deviation</p>
+$$
+s_p = \sqrt{\frac{(n_1-1)s^2_1 + (n_2-1)s^2_2}{n_1+n_2-2}}
+$$
+
+<h4>Case where \(\sigma^2_1 \neq \sigma^2_2\)</h4>
+
+<p>If it is believed that \(\sigma^2_1\neq \sigma^2_2\), then the \(100(1-\alpha)\%\) confidence interval is \((\bar{y}_1-\bar{y}_2) \pm t_{\alpha/2, \text{df}}\sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}\) where the Satterthwaite's degrees of freedom is \(\text{df}=\frac{(n_1-1)(n_2-1)}{(1-c)^2(n_1-1)+c^2(n_2-1)}\) and \(c=\frac{s^2_1/n_1}{s^2_1/n_1+s^2_2/n_2}\).</p>
+
+<p>We can use <code>proc ttest</code> to get the confidence interval along with other information.</p>
+
+<pre>
+    proc ttest data=yield alpha=0.05;
+        class grp;
+        var yld;
+    run;
+</pre>
+
+<figure>
+  <img src="SASyield5.png", width = "500">
+</figure> 
+
+<p> The point estimate is 27.0138. The 95% CI for \(\mu_1-\mu_2\) is [17.2176, 36.8100] if assuming equal variances, [17.2176, 36.8101] if assuming unequal variances.</p>
+
+<h2>Hypothesis testing</h2>
+
+<p>We can also do a hypothesis testing on \(\mu_1-\mu_2\). Similar to one-sample t-test, there are three different cases corresponding to different signs in \(H_0\). They can be specified using option <code>sides</code>.</p>
+
+<pre>
+    proc ttest data=yield sides=u h0=20 alpha=0.05;
+        class grp;
+        var yld;
+    run;
+</pre>
+
+<p> This block of code tests \(H_0:\mu_1-\mu_2\leq 20\) and \(H_a: \mu_1-\mu_2> 20\).
+<figure>
+  <img src="SASyield4.png", width = "500">
+</figure> 
+
+<p>The output shows that the \(p\)-value is 0.0793 for both assumptions of equality of variances. We failed to reject \(H_0\) at the confidence interval \(\alpha=0.05\). The table titled "Equality of Variances" also gives us the test of equal variances. Since the \(p\)-value is large (0.8584), two populations appear to the have the same variance.</p>
+
+<p><a href="OneSampleT.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="VarianceTest.html">Next</a></p>
+
+</body>
+</html>
+

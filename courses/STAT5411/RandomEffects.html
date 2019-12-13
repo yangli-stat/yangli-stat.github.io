@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<title>Random Effects Models</title>
+<head>
+<head>
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+</head>
+</head>
+<body>
+
+<h1>Random effects models</h1>
+<p><a href="ANCOVA.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="RandomEffects.html">Next</a></p>
+
+<h2>One-factor experiment with random treatment effects</h2>
+
+<figure>
+  <img src="random1.png", width = "600">
+</figure> 
+
+<p>The random effects model is \(y_{ij}=\mu+\tau_i+\epsilon_{ij}\) where \(\tau_i \sim N(0, \sigma^2_{\tau})\) is the random treatment effect. As usual, \(\epsilon_{ij}\sim N(0, \sigma^2_{\epsilon})\). The null hypothesis is \(H_0: \sigma^2_{\tau}=0\). The SAS code to fit this model is:</p>
+
+<pre>
+    data random1;
+        input intensity station;
+        datalines;
+        20 1
+        1050 1
+        3200 1
+        5600 1
+        50 1
+        4300 2
+        70 2
+        2560 2
+        3650 2
+        80 2
+        100 3
+        7700 3
+        8500 3
+        2960 3
+        3340 3
+        ;
+    run;
+    
+    proc glm data=random1;
+        class station;
+        model intensity = station;
+        random station;
+    run;    
+</pre>
+
+<p>The output is</p>
+
+<figure>
+  <img src="random2.png", width = "450">
+</figure> 
+
+<p>Here the ANOVA table has exactly the same numbers as in the fixed effects model. The expected mean squares (EMS) are different due to the random effects which are also given in the output.</p>
+
+<figure>
+  <img src="random3.png", width = "280">
+</figure> 
+
+<p>It shows that \(E(\text{MST})=\sigma^2_{\epsilon} + n \sigma^2_{\tau}\).</p>
+
+<h2>Randomized block design with random effects</h2>
+
+<figure>
+  <img src="random4.png", width = "600">
+</figure>
+
+<p>The model is \(y_{ij}=\mu+\tau_i + \beta_j + \epsilon_{ij}\) where \(\tau_i \sim N(0, \sigma^2_{\tau})\) is the random treatment effect of analyst, and \(\beta_j \sim N(0, \sigma^2_{\beta})\) is the random block of subject. The SAS code is:</p>
+
+<pre>
+    filename file1 url 'http://www.d.umn.edu/~yangli/5411/data/DNA.txt';
+    data DNA;
+        infile file1 firstobs=2;
+        input y analyst subject;
+    run;
+    
+    proc glm data=DNA;
+        class subject analyst;
+        model y = analyst subject / solution;
+        random analyst subject;
+    run;
+</pre>
+
+<figure>
+  <img src="random5.png", width = "450">
+</figure> 
+
+<p>Similarly, SAS will also give the expected mean squares as shown in Table 17.8 on the textbook.</p>
+
+<figure>
+  <img src="random6.png", width = "280">
+</figure>
+
+<h2>Factorial design with random effects</h2>
+
+<figure>
+  <img src="random7.png", width = "600">
+</figure> 
+
+<p>In this example, there are two factors: lab and assay, and they may interact with each other. The model is</p>
+$$
+y_{ijk} = \mu + \tau_i + \beta_j + (\tau\beta)_{ij} + \epsilon_{ijk}
+$$
+<p>where \(\tau_i\) is the random treatment effect of assay, \(\beta_j\) is the random treatment effect of lab, and \((\tau\beta)_{ij}\) is the random interaction effect such that \(\tau_i \sim N(0, \sigma^2_{\tau}), \beta_j \sim N(0, \sigma^2_{\beta}), (\tau\beta)_{ij} \sim N(0, \sigma^2_{\tau\beta})\).</p>
+
+<pre>
+    filename file1 url 'http://www.d.umn.edu/~yangli/5411/data/calcium.txt';
+    data calcium;
+        infile file1 firstobs=2;
+        input y assay lab;
+    run;
+    
+    proc glm data=calcium;
+        class assay lab;
+        model y = assay | lab / solution;
+        random assay | lab;
+    run;
+</pre>
+
+<figure>
+  <img src="random8.png", width = "450">
+</figure> 
+
+<p>There is insufficient evidence to reject \(H_0:\sigma^2_{\tau\beta}=0\) for interaction with a \(p\)-value of 0.08. There does
+not appear to be a significant interaction between the levels of factors assay and lab.</p>
+
+<p>To test for the two main effects \(H_0: \sigma^2_{\tau}=0\) and \(H_0: \sigma^2_{\beta}=0\), we use \(F=\frac{MSA}{MSAB}\) and \(F=\frac{MSB}{MSAB}\). <b>However, the tests in SAS output is not what we want. SAS still uses \(\frac{MSA}{MSE}\) and \(\frac{MSB}{MSE}\) for these two tests</b>. You need to do some hand calculations. The expected mean squares is still correct though (see Table 17.10).</p>
+
+<figure>
+  <img src="random9.png", width = "350">
+</figure>
+
+<p><a href="ANCOVA.html">Previous</a>&nbsp;&nbsp;&nbsp;<a href="index.html">Back</a>&nbsp;&nbsp;&nbsp;<a href="RandomEffects.html">Next</a></p>
+
+</body>
+</html>
+
+
