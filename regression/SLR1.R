@@ -1,4 +1,4 @@
-prod <- read.table("http://yangli.us/prod.txt", header=T)
+prod <- read.table("http://yangli.us/regression/prod.txt", header=T)
 fit <- lm(RunTime ~ RunSize, data=prod)
 fit$residuals
 
