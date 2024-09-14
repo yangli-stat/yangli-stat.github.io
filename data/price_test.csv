@@ -1,0 +1,51 @@
+car_ID,symboling,CarName,fueltype,aspiration,doornumber,carbody,drivewheel,enginelocation,wheelbase,carlength,carwidth,carheight,curbweight,enginetype,cylindernumber,enginesize,fuelsystem,boreratio,stroke,compressionratio,horsepower,peakrpm,citympg,highwaympg
+6,2,audi fox,gas,std,two,sedan,fwd,front,99.8,177.3,66.3,53.1,2507,ohc,five,136,mpfi,3.19,3.4,8.5,110,5500,19,25
+7,1,audi 100ls,gas,std,four,sedan,fwd,front,105.8,192.7,71.4,55.7,2844,ohc,five,136,mpfi,3.19,3.4,8.5,110,5500,19,25
+26,1,dodge colt hardtop,gas,std,four,sedan,fwd,front,93.7,157.3,63.8,50.6,1989,ohc,four,90,2bbl,2.97,3.23,9.4,68,5500,31,38
+29,-1,dodge dart custom,gas,std,four,wagon,fwd,front,103.3,174.6,64.6,59.8,2535,ohc,four,122,2bbl,3.34,3.46,8.5,88,5000,24,30
+35,1,honda civic cvcc,gas,std,two,hatchback,fwd,front,93.7,150,64,52.6,1956,ohc,four,92,1bbl,2.91,3.41,9.2,76,6000,30,34
+36,0,honda accord lx,gas,std,four,sedan,fwd,front,96.5,163.4,64,54.5,2010,ohc,four,92,1bbl,2.91,3.41,9.2,76,6000,30,34
+37,0,honda civic 1500 gl,gas,std,four,wagon,fwd,front,96.5,157.1,63.9,58.3,2024,ohc,four,92,1bbl,2.92,3.41,9.2,76,6000,30,34
+43,1,honda civic (auto),gas,std,two,sedan,fwd,front,96.5,169.1,66,51,2293,ohc,four,110,2bbl,3.15,3.58,9.1,100,5500,25,31
+48,0,jaguar xj,gas,std,four,sedan,rwd,front,113,199.6,69.6,52.8,4066,dohc,six,258,mpfi,3.63,4.17,8.1,176,4750,15,19
+52,1,maxda glc deluxe,gas,std,two,hatchback,fwd,front,93.1,159.1,64.2,54.1,1900,ohc,four,91,2bbl,3.03,3.15,9,68,5000,31,38
+60,1,mazda 626,gas,std,two,hatchback,fwd,front,98.8,177.8,66.5,53.7,2385,ohc,four,122,2bbl,3.39,3.39,8.6,84,4800,26,32
+68,-1,buick electra 225 custom,diesel,turbo,four,sedan,rwd,front,110,190.9,70.3,56.5,3515,ohc,five,183,idi,3.58,3.64,21.5,123,4350,22,25
+76,1,mercury cougar,gas,turbo,two,hatchback,rwd,front,102.7,178.4,68,54.8,2910,ohc,four,140,mpfi,3.78,3.12,8,175,5000,19,24
+78,2,mitsubishi lancer,gas,std,two,hatchback,fwd,front,93.7,157.3,64.4,50.8,1944,ohc,four,92,2bbl,2.97,3.23,9.4,68,5500,31,38
+87,1,mitsubishi pajero,gas,std,four,sedan,fwd,front,96.3,172.4,65.4,51.6,2405,ohc,four,122,2bbl,3.35,3.46,8.5,88,5000,25,32
+88,1,mitsubishi outlander,gas,turbo,four,sedan,fwd,front,96.3,172.4,65.4,51.6,2403,ohc,four,110,spdi,3.17,3.46,7.5,116,5500,23,30
+89,-1,mitsubishi mirage g4,gas,std,four,sedan,fwd,front,96.3,172.4,65.4,51.6,2403,ohc,four,110,spdi,3.17,3.46,7.5,116,5500,23,30
+91,1,nissan gt-r,diesel,std,two,sedan,fwd,front,94.5,165.3,63.8,54.5,2017,ohc,four,103,idi,2.99,3.47,21.9,55,4800,45,50
+92,1,nissan rogue,gas,std,two,sedan,fwd,front,94.5,165.3,63.8,54.5,1918,ohc,four,97,2bbl,3.15,3.29,9.4,69,5200,31,37
+99,2,nissan clipper,gas,std,two,hardtop,fwd,front,95.1,162.4,63.8,53.3,2008,ohc,four,97,2bbl,3.15,3.29,9.4,69,5200,31,37
+100,0,nissan rogue,gas,std,four,hatchback,fwd,front,97.2,173.4,65.2,54.7,2324,ohc,four,120,2bbl,3.33,3.47,8.5,97,5200,27,34
+102,0,nissan dayz,gas,std,four,sedan,fwd,front,100.4,181.7,66.5,55.1,3095,ohcv,six,181,mpfi,3.43,3.27,9,152,5200,17,22
+108,0,peugeot 504,gas,std,four,sedan,rwd,front,107.9,186.7,68.4,56.7,3020,l,four,120,mpfi,3.46,3.19,8.4,97,5000,19,24
+111,0,peugeot 504,diesel,turbo,four,wagon,rwd,front,114.2,198.9,68.4,58.7,3430,l,four,152,idi,3.7,3.52,21,95,4150,25,25
+112,0,peugeot 504,gas,std,four,sedan,rwd,front,107.9,186.7,68.4,56.7,3075,l,four,120,mpfi,3.46,2.19,8.4,95,5000,19,24
+113,0,peugeot 604sl,diesel,turbo,four,sedan,rwd,front,107.9,186.7,68.4,56.7,3252,l,four,152,idi,3.7,3.52,21,95,4150,28,33
+115,0,peugeot 505s turbo diesel,diesel,turbo,four,wagon,rwd,front,114.2,198.9,68.4,58.7,3485,l,four,152,idi,3.7,3.52,21,95,4150,25,25
+116,0,peugeot 504,gas,std,four,sedan,rwd,front,107.9,186.7,68.4,56.7,3075,l,four,120,mpfi,3.46,3.19,8.4,97,5000,19,24
+118,0,peugeot 604sl,gas,turbo,four,sedan,rwd,front,108,186.7,68.3,56,3130,l,four,134,mpfi,3.61,3.21,7,142,5600,18,24
+120,1,plymouth cricket,gas,turbo,two,hatchback,fwd,front,93.7,157.3,63.8,50.8,2128,ohc,four,98,spdi,3.03,3.39,7.6,102,5500,24,30
+124,-1,plymouth valiant,gas,std,four,wagon,fwd,front,103.3,174.6,64.6,59.8,2535,ohc,four,122,2bbl,3.35,3.46,8.5,88,5000,24,30
+127,3,porcshce panamera,gas,std,two,hardtop,rwd,rear,89.5,168.9,65,51.6,2756,ohcf,six,194,mpfi,3.74,2.9,9.5,207,5900,17,25
+135,3,saab 99le,gas,std,two,hatchback,fwd,front,99.1,186.6,66.5,56.1,2707,ohc,four,121,mpfi,2.54,2.07,9.3,110,5250,21,28
+145,0,subaru r1,gas,std,four,sedan,4wd,front,97,172,65.4,54.3,2385,ohcf,four,108,2bbl,3.62,2.64,9,82,4800,24,25
+146,0,subaru r2,gas,turbo,four,sedan,4wd,front,97,172,65.4,54.3,2510,ohcf,four,108,mpfi,3.62,2.64,7.7,111,4800,24,29
+147,0,subaru trezia,gas,std,four,wagon,fwd,front,97,173.5,65.4,53,2290,ohcf,four,108,2bbl,3.62,2.64,9,82,4800,28,32
+152,1,toyota corona,gas,std,two,hatchback,fwd,front,95.7,158.7,63.6,54.5,2040,ohc,four,92,2bbl,3.05,3.03,9,62,4800,31,38
+159,0,toyota corona,diesel,std,four,sedan,fwd,front,95.7,166.3,64.4,53,2275,ohc,four,110,idi,3.27,3.35,22.5,56,4500,34,36
+162,0,toyota corolla,gas,std,four,hatchback,fwd,front,95.7,166.3,64.4,52.8,2122,ohc,four,98,2bbl,3.19,3.03,9,70,4800,28,34
+164,1,toyota corolla liftback,gas,std,two,sedan,rwd,front,94.5,168.7,64,52.6,2169,ohc,four,98,2bbl,3.19,3.03,9,70,4800,29,34
+165,1,toyota corona,gas,std,two,hatchback,rwd,front,94.5,168.7,64,52.6,2204,ohc,four,98,2bbl,3.19,3.03,9,70,4800,29,34
+168,2,toyota corona liftback,gas,std,two,hardtop,rwd,front,98.4,176.2,65.6,52,2540,ohc,four,146,mpfi,3.62,3.5,9.3,116,4800,24,30
+169,2,toyota corolla,gas,std,two,hardtop,rwd,front,98.4,176.2,65.6,52,2536,ohc,four,146,mpfi,3.62,3.5,9.3,116,4800,24,30
+172,2,toyota corolla,gas,std,two,hatchback,rwd,front,98.4,176.2,65.6,52,2714,ohc,four,146,mpfi,3.62,3.5,9.3,116,4800,24,30
+179,3,toyota corolla liftback,gas,std,two,hatchback,rwd,front,102.9,183.5,67.7,52,2976,dohc,six,171,mpfi,3.27,3.35,9.3,161,5200,20,24
+185,2,volkswagen model 111,diesel,std,four,sedan,fwd,front,97.3,171.7,65.5,55.7,2264,ohc,four,97,idi,3.01,3.4,23,52,4800,37,46
+192,0,volkswagen rabbit,gas,std,four,sedan,fwd,front,100.4,180.2,66.9,55.1,2661,ohc,five,136,mpfi,3.19,3.4,8.5,110,5500,19,24
+199,-2,volvo 264gl,gas,turbo,four,sedan,rwd,front,104.3,188.8,67.2,56.2,3045,ohc,four,130,mpfi,3.62,3.15,7.5,162,5100,17,22
+202,-1,volvo 144ea,gas,turbo,four,sedan,rwd,front,109.1,188.8,68.8,55.5,3049,ohc,four,141,mpfi,3.78,3.15,8.7,160,5300,19,25
+204,-1,volvo 246,diesel,turbo,four,sedan,rwd,front,109.1,188.8,68.9,55.5,3217,ohc,six,145,idi,3.01,3.4,23,106,4800,26,27
