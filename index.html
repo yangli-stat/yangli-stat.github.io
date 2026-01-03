@@ -1,240 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dr. Yang Li at Florida Atlantic University</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Yang Li at Florida Atlantic University</title>
 
-  <style>
-    :root {
-      --bg-color: #f8f9fb;
-      --text-color: #333;
-      --header-bg: linear-gradient(90deg, #003366, #004c99);
-      --nav-bg: #004080;
-      --nav-hover-bg: #e0e0e0;
-      --nav-hover-text: #003366;
-      --accent: #3591d4;
-      --card-bg: #fff;
-    }
-
-    body.dark {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-bg: linear-gradient(90deg, #001a33, #00264d);
-      --nav-bg: #1e3a5f;
-      --nav-hover-bg: #2e4a70;
-      --nav-hover-text: #fff;
-      --accent: #1a73e8;
-      --card-bg: #1e1e1e;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Optima, Arial, Helvetica, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
-    .header {
-      background: var(--header-bg);
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .header img {
-      position: absolute;
-      top: 15px;
-      width: 80px;
-    }
-    .header img:first-child {
-      left: 20px;
-    }
-    .header img:last-child {
-      right: 20px;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    /* Dark mode toggle button */
-    .dark-toggle {
-      position: absolute;
-      top: 20px;
-      right: 120px;
-      background: #fff;
-      border: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-    body.dark .dark-toggle {
-      background: #444;
-      color: #eee;
-    }
-
-    /* Navbar */
-    #navbar {
-      background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.7rem;
-      transition: 0.3s ease;
-    }
-    #navbar a {
-      color: #f2f2f2;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-    #navbar a:hover {
-      background: var(--nav-hover-bg);
-      color: var(--nav-hover-text);
-    }
-    #navbar a.active {
-      background: #04AA6D;
-      font-weight: bold;
-    }
-    .sticky {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    /* Section styling */
-    .content {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    h2 {
-      background-color: var(--accent);
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      display: inline-block;
-      margin-top: 2rem;
-    }
-    h3 {
-      margin-top: 1.5rem;
-      color: var(--accent);
-    }
-    h4 {
-      margin-top: 1rem;
-      color: #777;
-    }
-    body.dark h4 {
-      color: #bbb;
-    }
-
-    /* Lists */
-    ul, ol {
-      margin: 0.5rem 0 1.5rem 1.5rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Cards for contact info */
-    .contact-card {
-      background: var(--card-bg);
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: background 0.3s;
-    }
-
-    /* Horizontal rule */
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 2rem 0;
-    }
-    body.dark hr {
-      border-top: 1px solid #444;
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="header">
-    <a href="https://www.fau.edu/" target="_blank"><img src="faulogo.png" alt="FAU logo"></a>
-    <h1>Dr. Yang Li @ FAU</h1>
-    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-  </div>
-
-  <div id="navbar">
-    <a class="active" href="/">Home</a>
-    <a href="#about">About Me</a>
+<header>
+  <nav>
+    <a href="#about">Bio</a>
     <a href="#research">Research</a>
     <a href="#teaching">Teaching</a>
     <a href="#advising">Advising</a>
     <a href="#contact">Contact</a>
+    <button id="theme-toggle">🌙</button>
+  </nav>
+  <div class="hero">
+    <h1>Yang Li</h1>
+    <p>Associate Professor of Statistics</p>
   </div>
+</header>
 
-  <div class="content">
+<section id="about" class="card-section reveal">
+  <h2>Bio</h2>
+<p>I am an associate professor of statistics in the <a href="http://www.math.fau.edu/" target="_blank">Department of Mathematics and Statistics</a> at 
+      <a href="https://www.fau.edu/" target="_blank">Florida Atlantic University</a>. I graduated from University of Science and Technology of China with a B.Sc. in physics. My PhD in physics was from University of Minnesota Twin Cities, and the other PhD in statistics was from Iowa State University. Previously, I held positions at the University of Minnesota Duluth.</p>
+</section>
 
-    <!-- === About === -->
-    <h2 id="about">About Me</h2>
-    <p>I am an associate professor of statistics in the <a href="http://www.math.fau.edu/" target="_blank">Department of Mathematics and Statistics</a> at 
-      <a href="https://www.fau.edu/" target="_blank">Florida Atlantic University</a>. I graduated from University of Science and Technology of China with a B.Sc. in physics. My PhD in physics was from University of Minnesota Twin Cities, and the other PhD in statistics was from Iowa State University. Previously, I held positions at the University of Minnesota Duluth. My research interests include spatial statistics, spatio-temporal processes, network analysis, machine learning, and statistical computing.</p>
-    
-    <h3>Employment</h3>
-    <ul>
-      <li>Associate professor, <a href="http://www.math.fau.edu/" target="_blank">Department of Mathematics and Statistics</a>, <a href="https://www.fau.edu/" target="_blank">Florida Atlantic University</a> (2024-present)</li>
-      <li>Assistant professor, <a href="http://www.math.fau.edu/" target="_blank">Department of Mathematics and Statistics</a>, <a href="https://www.fau.edu/" target="_blank">Florida Atlantic University</a> (2021-2024)</li>
-      <li>Associate professor, Department of Mathematics and Statistics, University of Minnesota Duluth (2019-2020)</li>
-      <li>Assistant professor, Department of Mathematics and Statistics, University of Minnesota Duluth (2013-2019)</li>
-    </ul>
+<section id="research" class="card-section reveal">
+  <h2>Research</h2>
+  <h3>Research Interest</h3>
+  <ul>
+    <li>Spatial statistics</li>
+    <li>Spatio-temporal processes</li>
+    <li>Network analysis</li>
+    <li>Statistical computing</li>
+    <li>Machine learning</li>
+  </ul>
 
-    <h3>Education</h3>
-    <ul>
-      <li>PhD in statistics, Iowa State University, 2013</li>
-      <li>PhD in physics, University of Minnesota, 2006</li>
-      <li>BS in physics, University of Science and Technology of China, 2001</li>
-    </ul>
-
-    <hr />
-
-    <!-- === Research === -->
-    <h2 id="research">Research</h2>
-    <h3>Research Interests</h3>
-    <ul>
-      <li>Spatial statistics</li>
-      <li>Spatio-temporal processes</li>
-      <li>Network analysis</li>
-      <li>Statistical computing</li>
-      <li>Machine learning</li>
-    </ul>
-
-    <h3>Publications</h3> 
-    <p>My <a href="https://scholar.google.com/citations?user=nLwlLtIAAAAJ&hl=en" target="_blank">Google Scholar</a> page</p>
-
-    <!-- full publications list -->
-    <ol>
-      <li>A. Emamverdian, X. Lyu, N. Pehlivan, L. Zhang, H. Sultan, <b>Y. Li</b>, and M. Zargar, <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1554519/full" target="_blank">Dual application of β-sitosterol and biochar reduces copper toxicity in bamboo via improved redox homeostasis</a>, <i>Frontiers in Plant Science</i>, 16, (2025).</li>
+<h3>Publications</h3>
+<ol>
+<li>A. Emamverdian, X. Lyu, N. Pehlivan, L. Zhang, H. Sultan, <b>Y. Li</b>, and M. Zargar, <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1554519/full" target="_blank">Dual application of β-sitosterol and biochar reduces copper toxicity in bamboo via improved redox homeostasis</a>, <i>Frontiers in Plant Science</i>, 16, (2025).</li>
       <li><b>Y. Li</b>, C. Yang, A. Young, and B. Zhuang, <a href="https://www.tandfonline.com/doi/full/10.1080/10920277.2024.2375993" target="_blank">Reducing medical costs of health insurance: The COVID-19 stress testing and portfolio effects</a>, <i>North American Actuarial Journal</i>, 29, (2025).</li>
       <li>A. Emamverdian, A. Khalofa, N. Pehlivan, and <b>Y. Li</b>, <a href="https://www.mdpi.com/2073-4395/15/2/386" target="_blank">Enhanced Cd tolerance in bamboo: synergistic effects of nano-hydroxyapatite and Fe<sub>3</sub>O<sub>4</sub> nanoparticles on reactive oxygen species scavenging, Cd detoxification, and water balance</a>, <i>Agronomy</i>, 15, 386 (2025).</li>
       <li>A. Emamverdian, A. Ghorbani, N. Pehlivan, <b>Y. Li</b>, M. Zargar, and G. Liu, <a href="https://doi.org/10.1016/j.eti.2024.103753" target="_blank">Bamboo biochar helps minimize Brassica phytotoxicity driven by toxic metals in naturally polluted soils of four mine zones</a>, <i>Environmental Technology & Innovation</i>, 36, 103753 (2024).</li>
@@ -273,10 +85,9 @@
       <li><b>Y. Li</b> and J. I. Kapusta, <a href="https://iopscience.iop.org/article/10.1088/0954-3899/31/4/041" target="_blank">Nonrelativistic rescattering effects on two-particle correlation</a>, <i>Journal of Physics G</i> 31, S331 (2005).</li>
       <li>J. I. Kapusta and <b>Y. Li</b>, <a href="https://link.springer.com/article/10.1556%2FAPH.24.2005.1-4.18" target="_blank">HBT interferometry with rescattering in the medium</a>, <i>Acta Physica Hungarica A</i> 24, 125 (2005).</li>
       <li>J. I. Kapusta and <b>Y. Li</b>, <a href="https://iopscience.iop.org/article/10.1088/0954-3899/30/8/060" target="_blank">Rescattering effects on HBT interferometry</a>, <i>Journal of Physics G</i> 30, S1069 (2004).</li>
+</ol>
 
-    </ol>
-
-    <h3>Selected Presentations</h3>
+<h3>Selected Presentations</h3>
     <ol>
       <li>International School and Conference on Network Science, NetSci 2025, Maastricht, Netherlands, "Centrality-Based Ranking of Temporal Pair Comparison", June 5, 2025.</li>
       <li>International School and Conference on Network Science, NetSci-X 2023, Buenos Aires, Argentina, "Centrality-Based Ranking of Paired Comparison", February 8, 2023.</li>
@@ -289,12 +100,11 @@
       <li>Physics Department and RIKEN, Brookhaven National Laboratory, Upton, NY, "Near-Field Properties in Relativistic Heavy Ion Collisions", January 16, 2007.</li>
       <li>Hot Quarks 2004, Workshop for young scientists on the physics of ultrarelativistic nucleus-nucleus collisions, Taos Valley, NM, "Rescattering Effects on HBT Interferometry", July 22, 2004.</li>
     </ol>
+</section>
 
-    <hr />
-
-    <!-- === Teaching === -->
-    <h2 id="teaching">Teaching</h2>
-    <p>In fall 2025, I am teaching STA 6236: Regression Analysis and STA 6106: Statistical Computong. In spring 2026, I will be teaching STA 6116: Survey of Statistics and Probability and STA 6444: Mathematical Probability.
+<section id="teaching" class="card-section reveal">
+  <h2>Teaching</h2>
+<p>In spring 2026, I am teaching STA 6116: Survey of Statistics and Probability, and STA 6444: Mathematical Probability.
 </p>
     <h3>Tools</h3>
     <p><a href="tools/normal.html" target="_blank">Normal distribution calculator</a></p>
@@ -335,12 +145,11 @@
       <li>STA 2023H: Honors Introductory Statistics</li>
       <li>STA 2023: Introductory Statistics</li>
       <li>MGF 1131: Mathematical Thinking in Context 2</li>    </ul>
+</section>
 
-    <hr />
-
-    <!-- === Advising === -->
-    <h2 id="advising">Advising</h2>
-    <h3>Florida Atlantic University</h3>
+<section id="advising" class="card-section reveal">
+  <h2>Advising</h2>
+<h3>Florida Atlantic University</h3>
     <h4>Postdoc</h4>
     <ol>
       <li>Qiaoyin Pan (co-advise with M. Han) (August 2023 - August 2025)</li>
@@ -389,54 +198,19 @@
       <li>Jingyi Yang (Spring 2020)</li>
     </ol>
 
-    <hr />
+</section>
 
-    <!-- === Contact === -->
-    <h2 id="contact">Contact</h2>
-    <div class="contact-card">
-      <h3>Office</h3>
-      <p>SE43, Room 266</p>
-      <h3>Email</h3>
-      <p>yangli AT fau DOT edu</p>
-      <h3>Web</h3>
-      <p><a href="http://yangli.us">http://yangli.us</a></p>
-    </div>
+<section id="contact" class="card-section reveal">
+  <h2>Contact</h2>
+  <p><b>Office:</b> SE43, Room 266</p>
+  <p><b>Email:</b> yangli [at] fau.edu</p>
+  <p><b>Website:</b> <a href="http://yangli.us">yangli.us</a></p>
+</section>
 
-  </div>
+<footer>
+  <p>© 2026 Yang Li</p>
+</footer>
 
-  <script>
-    // Sticky navbar
-    window.onscroll = function() {stickNavbar()};
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-    function stickNavbar() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-
-    // Dark mode toggle
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      const btn = document.querySelector(".dark-toggle");
-      if (document.body.classList.contains("dark")) {
-        btn.textContent = "☀️ Light Mode";
-      } else {
-        btn.textContent = "🌙 Dark Mode";
-      }
-      // save preference
-      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
-    }
-
-    // Load saved theme
-    window.onload = () => {
-      if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark");
-        document.querySelector(".dark-toggle").textContent = "☀️ Light Mode";
-      }
-    };
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
