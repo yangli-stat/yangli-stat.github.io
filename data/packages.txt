@@ -1,0 +1,1 @@
+install.packages(c("sf", "sp", "geoR", "gstat", "mapview", "spatstat", "spatstat.data", "spatstat.geom", "spatstat.explore", "rnaturalearth", "viridis"))
