@@ -1,61 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Yang Li at Florida Atlantic University</title>
-
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Yang Li | Statistics | Florida Atlantic University</title>
+  <meta name="description" content="Academic homepage of Dr. Yang Li, Associate Professor of Statistics at Florida Atlantic University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-  <nav>
-    <a href="#about">Bio</a>
-    <a href="#research">Research</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#advising">Advising</a>
-    <a href="#contact">Contact</a>
-    <button id="theme-toggle">🌙</button>
-  </nav>
-  <div class="hero">
-    <h1>Dr. Yang Li</h1>
-    <p>Associate Professor of Statistics</p>
-  </div>
-</header>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Dr. Yang Li home">
+        <span class="brand-mark">YL</span>
+        <span class="brand-text">Yang Li</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#bio">Bio</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+    </nav>
+  </header>
 
-<section id="about" class="card-section reveal">
-  <h2>Bio</h2>
-<p>I am an associate professor of statistics in the <a href="http://www.math.fau.edu/" target="_blank">Department of Mathematics and Statistics</a> at 
-      <a href="https://www.fau.edu/" target="_blank">Florida Atlantic University</a>. I graduated from University of Science and Technology of China with a B.Sc. in physics. My PhD in physics was from University of Minnesota Twin Cities, and the other PhD in statistics was from Iowa State University. Previously, I held positions at the University of Minnesota Duluth.</p>
-</section>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Florida Atlantic University · Department of Mathematics and Statistics</p>
+        <h2>Dr. Yang Li</h2>
+        <p class="subtitle">Associate Professor of Statistics</p>
+        <p class="hero-copy">
+          Research in spatial statistics, network science, machine learning, and interdisciplinary research.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#research">View research</a>
+          <a class="button secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
 
-<section id="research" class="card-section reveal">
-  <h2>Research</h2>
-  <h3>Research Interest</h3>
-  <ul>
-    <li>Spatial statistics</li>
-    <li>Spatio-temporal processes</li>
-    <li>Network analysis</li>
-    <li>Statistical computing</li>
-    <li>Machine learning</li>
-  </ul>
-</section>
-  
-<section id="contact" class="card-section reveal">
-  <h2>Contact</h2>
-  <p><b>Office:</b> SE43, Room 266</p>
-  <p><b>Email:</b> yangli [at] fau.edu</p>
-  <p><b>Website:</b> <a href="http://yangli.us">yangli.us</a></p>
-</section>
+    <section class="section" id="bio">
+      <div class="section-grid">
+        <div class="section-label reveal">
+          <span>01</span>
+          <h2>Bio</h2>
+        </div>
+        <article class="card reveal">
+          <p>
+            I am an associate professor of statistics in the
+            <a href="http://www.math.fau.edu/" target="_blank" rel="noopener">Department of Mathematics and Statistics</a>
+            at <a href="https://www.fau.edu/" target="_blank" rel="noopener">Florida Atlantic University</a>.
+            I graduated from University of Science and Technology of China with a B.Sc. in physics. My PhD in physics
+            was from University of Minnesota Twin Cities, and the other PhD in statistics was from Iowa State University.
+            Previously, I held positions at the University of Minnesota Duluth.
+          </p>
+        </article>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2026 Yang Li</p>
-</footer>
+    <section class="section accent" id="research">
+      <div class="section-grid">
+        <div class="section-label reveal">
+          <span>02</span>
+          <h2>Research</h2>
+        </div>
+        <div class="research-panel reveal">
+          <h3>Research Interests</h3>
+          <div class="interest-grid" aria-label="Research interests">
+            <div class="interest-card"><span>Spatial Statistics</span><strong>Geostatistics, spatio-temporal process, point processes</strong></div>
+            <div class="interest-card"><span>Network Science</span><strong>Community detection, statistical inference</strong></div>
+            <div class="interest-card"><span>Machine Learning</span><strong>Machine learning, deep learning applications</strong></div>
+            <div class="interest-card"><span>Interdisciplinary Research</span><strong>Nutrition, botany, actuarial science, meteorology, sports</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="section" id="contact">
+      <div class="section-grid">
+        <div class="section-label reveal">
+          <span>03</span>
+          <h2>Contact</h2>
+        </div>
+        <article class="card contact-card reveal">
+          <div>
+            <p class="contact-label">Office</p>
+            <p>SE43, Room 266</p>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <p>yangli [at] fau.edu</p>
+          </div>
+          <div>
+            <p class="contact-label">Website</p>
+            <p><a href="http://yangli.us" target="_blank" rel="noopener">yangli.us</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Yang Li</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
