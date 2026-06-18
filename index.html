@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Yang Li at Florida Atlantic University</title>
-  <meta name="description" content="Academic homepage of Dr. Yang Li, Associate Professor of Statistics at Florida Atlantic University." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,101 +11,168 @@
 
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Dr. Yang Li home">
+      <a class="brand" href="#top" aria-label="Yang Li homepage">
         <span class="brand-mark">YL</span>
-        <span class="brand-text">Yang Li</span>
+        <span>Yang Li</span>
       </a>
-      <div class="nav-links" id="navLinks">
+      <div class="nav-links">
         <a href="#bio">Bio</a>
         <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
       </div>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Florida Atlantic University · Department of Mathematics and Statistics</p>
-        <h1>Dr. Yang Li</h1>
-        <p class="subtitle">Associate Professor of Statistics</p>
-        <p class="hero-copy">
-          Research in spatial statistics, network science, machine learning, and interdisciplinary research.
+    <section id="top" class="hero section">
+      <p class="eyebrow">Florida Atlantic University · Department of Mathematics and Statistics</p>
+      <h1>Dr. Yang Li</h1>
+      <p class="subtitle">Associate Professor of Statistics</p>
+      <p class="hero-text">Research in spatial statistics, network science, machine learning, and interdisciplinary research.</p>
+      <div class="hero-actions">
+        <a class="button" href="#research">View research</a>
+        <a class="button" href="#teaching">View teaching</a>
+        <a class="button secondary" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section id="bio" class="section numbered-section">
+      <div class="section-number">01</div>
+      <div class="section-body card">
+        <h2>Bio</h2>
+        <p>
+I am an Associate Professor of Statistics in the <a href="https://www.math.fau.edu/" target="_blank" rel="noopener">Department of Mathematics and Statistics</a> at <a href="https://www.fau.edu/" target="_blank" rel="noopener">Florida Atlantic University</a>. My academic background spans both physics and statistics. I received a B.S. in Physics from the University of Science and Technology of China, followed by a Ph.D. in Physics from the University of Minnesota Twin Cities and a Ph.D. in Statistics from Iowa State University. Prior to joining Florida Atlantic University, I served on the faculty at the University of Minnesota Duluth. My research interests include spatial statistics, spatio-temporal processes, network analysis, statistical computing, and machine learning.
         </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#research">View research</a>
-          <a class="button secondary" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section id="research" class="section numbered-section">
+      <div class="section-number">02</div>
+      <div class="section-body card">
+        <h2>Research</h2>
+        <h3>Research Interests</h3>
+        <div class="interest-grid" aria-label="Research interests">
+          <div class="interest-card"><span>Spatial Statistics</span><strong>Geostatistics, spatio-temporal modeling, point processes</strong></div>
+          <div class="interest-card"><span>Network Science</span><strong>Community detection and statistical inference on networks</strong></div>
+          <div class="interest-card"><span>Machine Learning</span><strong>Machine learning and deep learning applications</strong></div>
+          <div class="interest-card"><span>Interdisciplinary Research</span><strong>Nutrition, botany, actuarial science, meteorology, and sports</strong></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="bio">
-      <div class="section-grid">
-        <div class="section-label reveal">
-          <span>01</span>
-          <h2>Bio</h2>
-        </div>
-        <article class="card reveal">
-          <p>
-            I am an associate professor of statistics in the
-            <a href="http://www.math.fau.edu/" target="_blank" rel="noopener">Department of Mathematics and Statistics</a>
-            at <a href="https://www.fau.edu/" target="_blank" rel="noopener">Florida Atlantic University</a>.
-            I graduated from University of Science and Technology of China with a B.Sc. in physics. My PhD in physics
-            was from University of Minnesota Twin Cities, and the other PhD in statistics was from Iowa State University.
-            Previously, I held positions at the University of Minnesota Duluth.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section accent" id="research">
-      <div class="section-grid">
-        <div class="section-label reveal">
-          <span>02</span>
-          <h2>Research</h2>
-        </div>
-        <div class="research-panel reveal">
-          <h3>Research Interests</h3>
-          <div class="interest-grid" aria-label="Research interests">
-            <div class="interest-card"><span>Spatial Statistics</span><strong>Geostatistics, spatio-temporal modeling, point process</strong></div>
-            <div class="interest-card"><span>Network Science</span><strong>Community detection, statistical inference on the network</strong></div>
-            <div class="interest-card"><span>Machine Learning</span><strong>Machine learning, deep learning applications</strong></div>
-            <div class="interest-card"><span>Interdisciplinary Research</span><strong>Nutrition, botany, actuarial science, meteorology, sports</strong></div>
+    <section id="teaching" class="section numbered-section">
+      <div class="section-number">03</div>
+      <div class="section-body card">
+        <h2>Teaching</h2>
+        <div class="stacked-cards" aria-label="Teaching experience">
+          <div class="interest-card">
+            <span>Current (Summer 2026)</span>
+            <ul>
+              <li>STA 2023: Introductory Statistics</li>
+            </ul>
+          </div>
+          <div class="interest-card">
+            <span>Previous courses</span>
+            <ul class="teaching-list" id="teaching-list">
+      <li>STA 6444: Mathematical Probability</li>
+      <li>STA 6326: Mathematical Statistics</li>
+      <li>STA 6207: Applied Statistical Methods</li>
+      <li>STA 6197: Biostatistics - Longitudinal Data Analysis</li>
+      <li class="extra-teaching">STA 6116: Survey of Statistics and Probability</li>
+      <li class="extra-teaching">STA 6106: Statistical Computing</li>
+      <li class="extra-teaching">STA 6236: Regression Analysis</li>
+      <li class="extra-teaching">CAP 5768: Introduction to Data Science</li>
+      <li class="extra-teaching">STA 5195: Biostatistics</li>
+      <li class="extra-teaching">ISC 4941: Data Science Capstone</li>
+      <li class="extra-teaching">STA 4241: RI: Statistical Learning</li>
+      <li class="extra-teaching">STA 4032: Probability and Statistics for Engineers</li>
+      <li class="extra-teaching">STA 3173: Introduction to Biostatistics</li>
+      <li class="extra-teaching">STA 3100: Computational Statistics</li>
+      <li class="extra-teaching">MAC 2312: Calculus with Analytic Geometry 2</li>
+      <li class="extra-teaching">MAC 2311: Calculus with Analytic Geometry 1</li>
+      <li class="extra-teaching">MAC 2233: Methods of Calculus</li>
+      <li class="extra-teaching">STA 2023H: Honors Introductory Statistics</li>
+      <li class="extra-teaching">STA 2023: Introductory Statistics</li>
+      <li class="extra-teaching">MGF 1131: Mathematical Thinking in Context 2</li>  
+            </ul>
+        <button class="show-more-button" id="teaching-toggle" type="button" aria-expanded="false" aria-controls="teaching-list">
+          Show more courses
+        </button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="section-grid">
-        <div class="section-label reveal">
-          <span>03</span>
-          <h2>Contact</h2>
-        </div>
-        <article class="card contact-card reveal">
-          <div>
-            <p class="contact-label">Office</p>
-            <p>SE43, Room 266</p>
-          </div>
-          <div>
-            <p class="contact-label">Email</p>
-            <p>yangli [at] fau.edu</p>
-          </div>
-          <div>
-            <p class="contact-label">Website</p>
-            <p><a href="http://yangli.us" target="_blank" rel="noopener">yangli.us</a></p>
-          </div>
-        </article>
+    <section id="publications" class="section numbered-section">
+      <div class="section-number">04</div>
+      <div class="section-body card">
+        <h2>Publications</h2>
+        <p class="section-note">A short list is shown first. Use the button to expand the complete list on this page.</p>
+
+        <ol class="publication-list" id="publication-list">
+      <li>A. Emamverdian, L. Zhang, N. Pehlivan, <b>Y. Li</b>, and M. Zargar, <a href="https://www.sciencedirect.com/science/article/pii/S0926669026003572" target="_blank">Mitigating arsenic toxicity in bamboo using silica-titania nanohybrids: Enhanced antioxidant defense, phytochelatin synthesis, and chloroplast integrity for improved crop resilience</a>, <i>Industrial Crops and Products</i>, 242, 122970 (2026).</li>
+      <li>A. Emamverdian, X. Lyu, N. Pehlivan, L. Zhang, H. Sultan, <b>Y. Li</b>, and M. Zargar, <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1554519/full" target="_blank">Dual application of β-sitosterol and biochar reduces copper toxicity in bamboo via improved redox homeostasis</a>, <i>Frontiers in Plant Science</i>, 16, (2025).</li>
+      <li><b>Y. Li</b>, C. Yang, A. Young, and B. Zhuang, <a href="https://www.tandfonline.com/doi/full/10.1080/10920277.2024.2375993" target="_blank">Reducing medical costs of health insurance: The COVID-19 stress testing and portfolio effects</a>, <i>North American Actuarial Journal</i>, 29, (2025).</li>
+      <li>A. Emamverdian, A. Khalofa, N. Pehlivan, and <b>Y. Li</b>, <a href="https://www.mdpi.com/2073-4395/15/2/386" target="_blank">Enhanced Cd tolerance in bamboo: synergistic effects of nano-hydroxyapatite and Fe<sub>3</sub>O<sub>4</sub> nanoparticles on reactive oxygen species scavenging, Cd detoxification, and water balance</a>, <i>Agronomy</i>, 15, 386 (2025).</li>
+      <li>A. Emamverdian, A. Ghorbani, N. Pehlivan, <b>Y. Li</b>, M. Zargar, and G. Liu, <a href="https://doi.org/10.1016/j.eti.2024.103753" target="_blank">Bamboo biochar helps minimize Brassica phytotoxicity driven by toxic metals in naturally polluted soils of four mine zones</a>, <i>Environmental Technology & Innovation</i>, 36, 103753 (2024).</li>
+      <li class="extra-publication">A. Emamverdian, A. Khalofah, N. Pehlivan, <b>Y. Li</b>, M. Chen, and G. Liu, <a href="https://www.sciencedirect.com/science/article/pii/S0147651324005074" target="_blank">Iron nanoparticles in combination with other conventional Fe sources remediate mercury toxicity-affected plants and soils by nutrient accumulation in bamboo species</a>, <i>Ecotoxicology and Environmental Safety</i>, 278, 116431 (2024).</li>
+      <li class="extra-publication">A. Emamverdian, A. Khalofah, N. Pehlivan, M. Zia-ur-Rehman, <b>Y. Li</b>, and M. Zargar, <a href="https://link.springer.com/article/10.1007/s11356-023-31549-7" target="_blank">Exogenous application of jasmonates and brassinosteroids alleviates lead toxicity in bamboo by altering biochemical and physiological attributes</a>, <i>Environmental Science and Pollution Research</i>, 31, 7008 (2023).</li>
+      <li class="extra-publication">A. Emamverdian, A. Ghorbani, N. Pehlivan, G. Liu, <b>Y. Li</b>, J. Barker, M. Zargar, and M. Chen, <a href="https://www.sciencedirect.com/science/article/pii/S0304423823006027" target="_blank">Co-Application of Melatonin and zeolite boost bamboo tolerance under Cadmium by enhancing antioxidant capacity, osmolyte accumulation, plant nutrient availability, and decreasing Cadmium absorption</a>, <i>Scientia Horticulturae</i>, 322, 112433 (2023).</li>
+      <li class="extra-publication">A. Emamverdian, A. Ghorbani, <b>Y. Li</b>, N.Pehlivan, J. Barker, Y. Ding, G. Liu, and M. Zargar, <a href="https://www.mdpi.com/2073-4395/13/7/1748" target="_blank">Responsible mechanisms for restriction of heavy metals' toxicity in plants' by Co-foliar spraying of nanoparticles</a>, <i>Agronomy</i>, 13, 1748 (2023).</li>
+      <li class="extra-publication">A. Emamverdian, Y. Ding, M. Hasanuzzaman, J. Barker, G. Liu, <b>Y. Li</b>, and F. Mokhberdoran, <a href="https://www.frontiersin.org/articles/10.3389/fpls.2023.1121886/abstract" target="_blank">Insight into the biochemical and physiological mechanisms of nanoparticles-induced arsenic tolerance in bamboo</a>, <i>Frontiers in Plant Science</i>, 14, 1121886 (2023).</li>
+      <li class="extra-publication">A. Emamverdian, Y. Ding, J. Barker, G. Liu, <b>Y. Li</b>, and F. Mokhberdoran, <a href="https://www.mdpi.com/1422-0067/24/3/1942" target="_blank">Sodium nitroprusside improves bamboo resistance under Mn and Cr toxicity with stimulation of antioxidants activity, relative water content, and metal translocation and accumulation</a>, <i>International Journal of Molecular Sciences</i> 24, 1942 (2023).</li>
+      <li class="extra-publication">H. Papei and <b>Y. Li</b>, <a href="https://www.mdpi.com/1999-4893/16/1/22" target="_blank">Stochastic local community detection in networks</a>, <i>Algorithms</i>, 16, 22 (2023).</li>
+      <li class="extra-publication">A. Emamverdian, Y. Ding, M. Alyemeni, J. Barker, G. Liu, <b>Y. Li</b>, F. Mokhberdoran, and P. Ahmad, <a href="https://www.mdpi.com/2076-3921/11/12/2328" target="_blank">Benzylaminopurine and abscisic acid mitigate cadmium and copper toxicity by boosting plant growth, antioxidant capacity, reducing metal accumulation and translocation in bamboo [Pleioblastus pygmaeus (Miq.)] plants</a>, <i>Antioxidants</i> 11, 2328 (2022).</li>
+      <li class="extra-publication">A. Emamverdian, Y. Ding, J. Barker, G. Liu, <b>Y. Li</b>, F. Mokhberdoran, and M. Ramakrishnan, <a href="https://www.mdpi.com/2076-3921/11/3/451" target="_blank">Co-application of 24-epibrassinolide and titanium oxide nanoparticles promotes bamboo plant tolerance to Cu and Cd toxicity by increasing antioxidant activity, photosynthetic capacity and reducing heavy metal accumulation and translocation</a>, <i>Antioxidants</i> 11, 451 (2022).</li>
+      <li class="extra-publication">A. Emamverdian, Y. Ding, J. Barker, F. Mokhberdoran, M. Ramakrishnan, G. Liu, and <b>Y. Li</b>, <a href="https://www.mdpi.com/2076-3921/10/12/1981" target="_blank">Nitric oxide ameliorates plant metal toxicity by increasing antioxidant capacity and reducing Pb and Cd translocation</a>, <i>Antioxidants</i> 10, 1981 (2021).</li>
+      <li class="extra-publication">P.-J. Shi, K. Yu, K. J. Niklas, J. Schrader, Y. Song, R. Zhu, <b>Y. Li</b>, H. Wei, and D. A. Ratkowsky, <a href="https://www.mdpi.com/2073-8994/13/8/1524" target="_blank">A general model for describing the ovate leaf shape</a>, <i>Symmetry</i> 13, 1524 (2021).</li>
+      <li class="extra-publication">L. Ding, <b>Y. Li</b>, H. Wang, and K. Xu, <a href="https://ieeexplore.ieee.org/document/9162877" target="_blank">Measurement and analysis of cloud user interest: a glance from BitTorrent</a>, <i>IEEE INFOCOM 2020</i>, (2020).
+      <li class="extra-publication">E. R. Keyel, G. J. Niemi, M. A. Etterson, D. C. Evers, C. DeSorbo, J. C. Hoffman, J. W. Nichols, <b>Y. Li</b>, and F. Nicoletti, <a href="https://academic.oup.com/condor/advance-article-abstract/doi/10.1093/condor/duz069/5741362" target="_blank">Feather mercury increases with feeding at higher trophic levels in two species of migrant raptors, Merlin (Falco columbarius) and Sharp-shinned Hawk (Accipiter striatus)</a>, <i>The Condor: Ornithological Applications</i> 122, duz069 (2020).</li>
+      <li class="extra-publication"><b>Y. Li</b> and Z. Zhu, <a href="https://link.springer.com/article/10.1007/s42081-019-00069-5" target="_blank">Spatio-temporal modeling of global ozone data using convolution</a>, <i>Japanese Journal of Statistics and Data Science</i> 3, 153 (2020).</li>
+      <li class="extra-publication"><b>Y. Li</b> and Y. Qi, <a href="https://link.springer.com/article/10.1007/s00184-019-00740-7" target="_blank">Asymptotic distribution of modularity in networks</a>, <i>Metrika</i> 83, 467 (2020).</li>
+      <li class="extra-publication">P.-J. Shi, M. Li, <b>Y. Li</b>, J. Liu, H. Shi, T. Xie, and C. Yue, <a href="https://www.nat-hazards-earth-syst-sci.net/19/1119/2019/" target="_blank">Taylor's power law in the Wenchuan earthquake sequence with fluctuation scaling</a>, <i>Natural Hazards and Earth System Sciences</i> 19, 1119 (2019).</li>
+      <li class="extra-publication">P.-J. Shi, D. A. Ratkowsky, <b>Y. Li</b>, L. Zhang, S. Lin, and J. Gielis, <a href="https://www.mdpi.com/1999-4907/9/11/714" target="_blank">A general leaf area geometric formula exists for plants - Evidence from the simplified Gielis equation</a>, <i>Forests</i> 9, 714 (2018).</li>
+      <li class="extra-publication">P.-J. Shi, X. Zheng, D. A. Ratkowsky, <b>Y. Li</b>, P. Wang, and L. Cheng, <a href="https://www.mdpi.com/2073-8994/10/4/118" target="_blank">A simple method of measuring the bilateral symmetry of leaves</a>, <i>Symmetry</i> 10, 118 (2018).</li>
+      <li class="extra-publication">P.-J. Shi, D. A. Ratkowsky, N. Wang, <b>Y. Li</b>, L. Zhao, G. Reddy, and B.-L. Li, <a href="https://www.sciencedirect.com/science/article/abs/pii/S1476945X17300909" target="_blank">Comparison of five methods for parameter estimation under Taylor's power law</a>, <i>Ecological Complexity</i> 32, 121 (2017).</li>
+      <li class="extra-publication">W. A. Fuller, J. C. Legg, and <b>Y. Li</b>, <a href="https://amstat.tandfonline.com/doi/abs/10.1080/01621459.2016.1222285?journalCode=uasa20#.XmD0oBOSk0o" target="_blank">Replication variance estimation for rejective sampling</a>, <i>Journal of the American Statistical Association</i> 112, 1562 (2017).</li>
+      <li class="extra-publication">E. Heald, T. R. Hrabik, <b>Y. Li</b>, Z. J. Lawson, S. R. Carpenter, and M. J. Vander Zanden, <a href="https://link.springer.com/article/10.1007%2Fs00027-016-0516-x" target="_blank">The effects of experimental whole-lake mixing on horizontal spatial patterns of fish and Zooplankton</a>, <i>Aquatic Sciences</i> 79, 543 (2017).</li>
+      <li class="extra-publication">J. I. Kapusta, G. Chen, R. J. Fries, and <b>Y. Li</b>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0375947416000233" target="_blank">Early time dynamics of gluon fields in high energy nuclear collisions</a>, <i>Nuclear Physics A</i> 956, 553 (2016).</li>
+      <li class="extra-publication"><b>Y. Li</b> and Z. Zhu, <a href="https://www.sciencedirect.com/science/article/pii/S0167947316301566" target="_blank">Modeling nonstationary covariance function with convolution on sphere</a>, <i>Computational Statistics and Data Analysis</i> 104, 233 (2016).</li>
+      <li class="extra-publication">G. Chen, R. J. Fries, J. I. Kapusta, and <b>Y. Li</b>, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.92.064912" target="_blank">Early-time dynamics of gluon fields in high energy nuclear collisions</a>, <i>Physical Review C</i> 92, 064912 (2015).</li>
+      <li class="extra-publication">J. Du, C. Ma, and <b>Y. Li</b>, <a href="https://link.springer.com/article/10.1007/s11004-013-9441-x" target="_blank">Isotropic variogram matrix functions on spheres</a>, <i>Mathematical Geosciences</i> 45, 341 (2013).</li>
+      <li class="extra-publication"><b>Y. Li</b> and K. Tuchin, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.78.024905" target="_blank">Probing the low-x structure of nuclear matter with diffractive hadron production in pA collisions</a>, <i>Physical Review C</i> 78, 024905 (2008).</li>
+      <li class="extra-publication"><b>Y. Li</b>, <a href="https://iopscience.iop.org/article/10.1088/0954-3899/35/10/104051", target="_blank">Baryon enhancement in high-density QCD and relativistic heavy ion collisions</a>, <i>Journal of Physics G</i> 35, 104051 (2008).</li>
+      <li class="extra-publication"><b>Y. Li</b> and K. Tuchin, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0375947408005289" target="_blank">Spectrum of diffractively produced gluons in onium-nucleus collisions</a>, <i>Nuclear Physics A</i> 807, 190 (2008).</li>
+      <li class="extra-publication"><b>Y. Li</b> and K. Tuchin, <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.77.114012" target="_blank">Gluon multiplicity in coherent diffraction of onium on a heavy nucleus</a>, <i>Physical Review D</i> 77, 114012 (2008).</li>
+      <li class="extra-publication"><b>Y. Li</b> and K. Tuchin, <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.75.074022" target="_blank">Gluon recombination in high parton density QCD: inclusive pion production</a>, <i>Physical Review D</i> 75, 074022 (2007).</li>
+      <li class="extra-publication">R. J. Fries, J. I. Kapusta, and <b>Y. Li</b>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0375947406003629" target="_blank">From color fields to quark gluon plasma</a>, <i>Nuclear Physics A</i> 774, 861 (2006).</li>
+      <li class="extra-publication">J. I. Kapusta and <b>Y. Li</b>, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.72.064902" target="_blank">Rescattering effects on intensity interferometry</a>, <i>Physical Review C</i> 72, 064902 (2005).</li>
+      <li class="extra-publication"><b>Y. Li</b> and J. I. Kapusta, <a href="https://iopscience.iop.org/article/10.1088/0954-3899/31/4/041" target="_blank">Nonrelativistic rescattering effects on two-particle correlation</a>, <i>Journal of Physics G</i> 31, S331 (2005).</li>
+      <li class="extra-publication">J. I. Kapusta and <b>Y. Li</b>, <a href="https://link.springer.com/article/10.1556%2FAPH.24.2005.1-4.18" target="_blank">HBT interferometry with rescattering in the medium</a>, <i>Acta Physica Hungarica A</i> 24, 125 (2005).</li>
+      <li class="extra-publication">J. I. Kapusta and <b>Y. Li</b>, <a href="https://iopscience.iop.org/article/10.1088/0954-3899/30/8/060" target="_blank">Rescattering effects on HBT interferometry</a>, <i>Journal of Physics G</i> 30, S1069 (2004).</li>
+        </ol>
+
+        <button class="show-more-button" id="publications-toggle" type="button" aria-expanded="false" aria-controls="publication-list">
+          Show more publications
+        </button>
+      </div>
+    </section>
+
+    <section id="contact" class="section numbered-section">
+      <div class="section-number">05</div>
+      <div class="section-body contact-grid">
+        <h2>Contact</h2>
+        <div class="contact-card"><span>Office</span><strong>SE43, Room 266</strong></div>
+        <div class="contact-card"><span>Email</span><strong>yangli [at] fau.edu</strong></div>
+        <div class="contact-card"><span>Website</span><strong><a href="https://yangli.us/" target="_blank" rel="noopener">yangli.us</a></strong></div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2026 Yang Li</p>
-  </footer>
-
+  <footer class="site-footer">© 2026 Yang Li</footer>
   <script src="script.js"></script>
 </body>
 </html>
